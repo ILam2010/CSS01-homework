@@ -1,0 +1,189 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Exercise 1: Profile Cards */
+.team {
+  display: flex;
+  justify-content: space-around;
+  background: #f0f0f0;
+  padding: 2em;
+}
+
+.card {
+  background: #fff;
+  padding: 1em;
+  border-radius: 10px;
+  position: relative;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card::before {
+  content: "★";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: gold;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+ul.social {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+a[href^="mailto"] {
+  color: red;
+}
+
+/* Exercise 2: Pricing Table */
+.pricing {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+  position: relative;
+  background: #e7f0ff;
+}
+
+.plan {
+  width: 200px;
+  padding: 1em;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px gray;
+  margin: 0 10px;
+  position: relative;
+}
+
+.basic {
+  box-sizing: content-box;
+  border: 2px solid #ccc;
+}
+
+.popular {
+  box-sizing: border-box;
+  border: 2px solid #4CAF50;
+}
+
+.popular::before {
+  content: "Most Popular";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  background: #4CAF50;
+  color: white;
+  padding: 5px;
+  font-size: 0.8em;
+}
+
+.premium {
+  box-sizing: border-box;
+  border: 2px solid #2196F3;
+}
+
+/* Bonus: Tooltip-style effect */
+.plan button:hover::after {
+  content: "Click to subscribe!";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+
+/* Exercise 3: Hero Section */
+.hero {
+  position: relative;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  display: inline;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+.content {
+  max-width: 50%;
+}
+
+.hero-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Bonus: Responsive layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .hero-bg {
+    position: static;
+    opacity: 1;
+  }
+
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Comments:
+  - Practiced complex CSS selectors (e.g., attribute selectors, pseudo-elements)
+  - Learned how box-sizing affects layout and spacing
+  - Explored flexbox/grid and responsive techniques
+*/
